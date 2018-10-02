@@ -36,31 +36,41 @@ case class Constant(d: Double) extends Expression {
 
 case class Var(x: String) extends Expression{
   override def reduce(env: (String, Double)*): Double = {
-
+    env match {
+      case _ -> value => value
+    }
   }
 }
 
 case class Ln(x: Expression) extends Expression {
   override def reduce(env: (String, Double)*): Double = {
-
+    env match {
+      case _ -> value => value
+    }
   }
 }
 
 case class Exp(x: Expression) extends Expression {
   override def reduce(env: (String, Double)*): Double = {
-
+    env match {
+      case (_ -> value) => value
+    }
   }
 }
 
 case class Sin(x: Expression) extends Expression{
   override def reduce(env: (String, Double)*): Double = {
-
+    env match {
+      case (_ -> value) => value
+    }
   }
 }
 
 case class ArcSin(x: Expression) extends Expression{
   override def reduce(env: (String, Double)*): Double = {
-
+    env match {
+      case (_ -> value) => value
+    }
   }
 }
 
