@@ -28,17 +28,41 @@ abstract class Expression {
   override def toString: String = super.toString
 }
 
-case class Constant(d: Double) extends Expression
+case class Constant(d: Double) extends Expression {
+  override def reduce(env: (String, Double)*): Double = {
+    d
+  }
+}
 
-case class Var(x: String) extends Expression
+case class Var(x: String) extends Expression{
+  override def reduce(env: (String, Double)*): Double = {
 
-case class Ln(x: Expression) extends Expression
+  }
+}
 
-case class Exp(x: Expression) extends Expression
+case class Ln(x: Expression) extends Expression {
+  override def reduce(env: (String, Double)*): Double = {
 
-case class Sin(x: Expression) extends Expression
+  }
+}
 
-case class ArcSin(x: Expression) extends Expression
+case class Exp(x: Expression) extends Expression {
+  override def reduce(env: (String, Double)*): Double = {
+
+  }
+}
+
+case class Sin(x: Expression) extends Expression{
+  override def reduce(env: (String, Double)*): Double = {
+
+  }
+}
+
+case class ArcSin(x: Expression) extends Expression{
+  override def reduce(env: (String, Double)*): Double = {
+
+  }
+}
 
 case class Plus(first: Expression, second: Expression) extends Expression
 
